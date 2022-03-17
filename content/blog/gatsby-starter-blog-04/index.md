@@ -54,5 +54,20 @@ https://developers.cloudflare.com/pages/platform/build-configuration/
 16.14.0
 ```
 
+今度は成功！
+![](https://i.gyazo.com/b7e6eb37052f1bc6f87845ec15e9260a.png)
+
 
 ## 独自ドメイン設定
+
+![](https://i.gyazo.com/e0821e2b2d44e191ed135847958b4f50.png)
+
+![](https://i.gyazo.com/c85ce2ab68beb95325f5934d6ffd71e3.png)
+
+![](https://i.gyazo.com/25c0e171b5e135d2974792359a0bb79e.png)
+
+![](https://i.gyazo.com/b2b8ab00bc56bff9092908881ccbd796.png)
+
+と、指示に従っていっただけで、独自ドメインで公開できました！！
+
+![](https://i.gyazo.com/9c210ac1fd008325e79493f62cd86691.png)

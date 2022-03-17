@@ -44,7 +44,7 @@ Githubへの接続のための処理をします。
 ![](https://i.gyazo.com/9902515cf8ac97cf7e2504576b198ae0.png)
 node.jsのバージョンが古いようです。
 
-`.nvmrc`というファイルにnode.jsのバージョンを書いておけばよさそう。
+`.nvmrc`というファイルにnode.jsのバージョンを書いておけばよさそう。  
 https://developers.cloudflare.com/pages/platform/build-configuration/
 
 ローカル環境で16.14.0なので、同じバージョンをしてしてみます。

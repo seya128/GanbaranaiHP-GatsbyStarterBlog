@@ -231,6 +231,7 @@ table thead tr th {
 
 a {
   color: var(--color-primary);
+  word-break: break-all;
 }
 
 a:hover,
@@ -313,6 +314,10 @@ a:focus {
 
 .blog-post-nav ul {
   margin: var(--spacing-0);
+}
+
+.blog-post img {
+  max-width: 100%;
 }
 
 .gatsby-highlight {

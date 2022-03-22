@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -12,8 +13,12 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        {/*<Bio />*/}
+        <Seo title="Top" />
+        <StaticImage 
+          src="../images/mori.jpg" 
+          alt="はーつん"
+          layout="fullWidth"
+          />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -25,8 +30,13 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
-      {/*<Bio />*/}
+      <Seo title="Top" />
+      <StaticImage 
+        src="../images/mori.jpg" 
+        alt="はーつん"
+        layout="fullWidth"
+      />
+      
       <div>
         がんばり過ぎていませんか？<br/>
         ガンバラナイは、がんばらない技術を提供していきます。

@@ -13,7 +13,7 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="Top" />
+        <Seo topFlag={true} />
         <StaticImage 
           src="../images/mori.jpg" 
           alt="はーつん"
@@ -30,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Top" />
+      <Seo topFlag={true} />
       <StaticImage 
         src="../images/mori.jpg" 
         alt="はーつん"

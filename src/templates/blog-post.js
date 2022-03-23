@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
 
 //import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -10,6 +10,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const image = getImage(post.frontmatter.image)
+  const imageSrc = getSrc(post.frontmatter.image)
   const { previous, next } = data
 
   return (
@@ -17,6 +18,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        image={imageSrc}
       />
       <article
         className="blog-post"
@@ -92,7 +94,6 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             gatsbyImageData(
-              width: 1024
               layout: FULL_WIDTH
             )
           }

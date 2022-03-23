@@ -1,14 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: `ガンバラナイ`,
+    subTitle: `がんばり過ぎていませんか？`,
+    description: `がんばり過ぎていませんか？がんばらない技術を提供します。`,
+    siteUrl: `https://ganbaranai.tech/`,
+    ogpImage: `/ganbaranai-ogp.jpg`,
+    social: {
+      twitter: `ganbaranai_tech`,
+    },
     author: {
       name: `Kyle Mathews`,
       summary: `who lives and works in San Francisco building useful things.`,
-    },
-    description: `がんばり過ぎていませんか？がんばらない技術を提供します。`,
-    siteUrl: `https://ganbaranai.tech/`,
-    social: {
-      twitter: `ganbaranai_tech`,
     },
   },
   plugins: [
@@ -47,7 +49,24 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-plugin-image`,
-          `gatsby-plugin-sharp`,
+          {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+              defaults: {
+                formats: [`auto`, `webp`],
+                placeholder: `dominantColor`,
+                quality: 50,
+                breakpoints: [750, 1080, 1366, 1920],
+                backgroundColor: `transparent`,
+                tracedSVGOptions: {},
+                blurredOptions: {},
+                jpgOptions: {},
+                pngOptions: {},
+                webpOptions: {},
+                avifOptions: {},
+              },
+            },
+          },
         ],
       },
     },
@@ -107,7 +126,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "GANBARANAI RSS Feed",
           },
         ],
       },
@@ -115,15 +134,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `ガンバラナイ`,
+        short_name: `ガンバラナイ`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/ganbaranai.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

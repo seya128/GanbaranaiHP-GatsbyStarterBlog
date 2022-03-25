@@ -333,6 +333,27 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+.gatsby-code-title {
+  background: #777;
+  color: #eee;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  margin: 20px 0px -20px;
+  padding: 8px 0.5rem 20px;
+  font-size: 0.8em;
+  line-height: 1;
+  display: table;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #444444;
+  display: block;
+  margin-right: -1em;
+  margin-left: -16px;
+  padding-right: 1em;
+  padding-left: 10px;
+  border-left: 6px solid rgb(255 173 173);
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {

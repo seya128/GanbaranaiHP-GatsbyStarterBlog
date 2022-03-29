@@ -9,7 +9,7 @@ import Seo from "../components/seo"
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const image = getImage(post.frontmatter.image)
+  const image = getImage(post.frontmatter.image) || null
   const imageSrc = getSrc(post.frontmatter.image)
   const { previous, next } = data
 
@@ -29,7 +29,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <hr/>
           <p>{post.frontmatter.date}</p>
-          <GatsbyImage image={image} alt={post.frontmatter.title} />
+          {image && (<GatsbyImage image={image} alt={post.frontmatter.title} />)}
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}

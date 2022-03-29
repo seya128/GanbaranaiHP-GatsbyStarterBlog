@@ -2,6 +2,8 @@
 title: GatsbyでHP作成 その7：TOPページに画像を表示
 date: "2022-03-22T18:50:00.000Z"
 description: "Gatsby Starter Blogで、TOPページに画像を表示します"
+blog: "Tech"
+tags: ["GatsbyJS"]
 ---
 
 トップページに画像を入れてみました。

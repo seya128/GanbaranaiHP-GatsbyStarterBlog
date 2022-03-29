@@ -3,6 +3,8 @@ title: GatsbyでHP作成 その10：OGP画像の設定
 date: "2022-03-23T22:00:00.000Z"
 description: "Gatsby Starter Blogで、OGP画像設定"
 image: "./90b0a9755fc0608be4e29ad1743b5dc0.png"
+blog: "Tech"
+tags: ["GatsbyJS"]
 ---
 
 SNS等でシェアした際に、きちんと画像が表示されるようにOGP画像の設定をしました。

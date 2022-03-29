@@ -2,6 +2,8 @@
 title: GatsbyでHP作成 その12：Twitter投稿の埋め込み
 date: "2022-03-25T17:00:00.000Z"
 description: "Gatsby Starter Blogで、Twitterの投稿を埋め込んでみました。"
+blog: "Tech"
+tags: ["GatsbyJS"]
 ---
 
 Blogに、Twitterの投稿を埋め込めるといいなと思いやってみました。

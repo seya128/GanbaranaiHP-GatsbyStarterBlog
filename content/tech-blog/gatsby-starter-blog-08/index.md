@@ -2,6 +2,8 @@
 title: GatsbyでHP作成 その8：Googleフォントを使ってみる
 date: "2022-03-22T20:10:00.000Z"
 description: "Gatsby Starter Blogで、Googleフォントを使ってみます"
+blog: "Tech"
+tags: ["GatsbyJS"]
 ---
 
 Gatsby Starter Blogのフォントがかなり個性的で日本語に合わない感じだったので、Googleフォントに変更してみました。

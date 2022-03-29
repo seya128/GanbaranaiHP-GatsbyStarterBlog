@@ -8,9 +8,20 @@ import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const all_posts = data.allMarkdownRemark.nodes
 
-  if (posts.length === 0) {
+  const blogs = [
+    {
+      label: "ガンバラナイBLOG",
+      posts: all_posts.filter(node => {return node.frontmatter.blog==="ガンバラナイ"})
+    },
+    {
+      label: "技術BLOG",
+      posts: all_posts.filter(node => {return node.frontmatter.blog==="Tech"})
+    }
+  ]
+
+  if (all_posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo topFlag={true} />
@@ -41,38 +52,45 @@ const BlogIndex = ({ data, location }) => {
         がんばり過ぎていませんか？<br/>
         ガンバラナイは、がんばらない技術を提供していきます。
       </div>
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
+      
+      {blogs.map((blog => {
+        return(
+          <div>
+            <h3>{blog.label}</h3>
+            <ol style={{ listStyle: `none` }}>
+              {blog.posts.map(post => {
+                const title = post.frontmatter.title || post.fields.slug
+                return (
+                  <li key={post.fields.slug}>
+                    <article
+                      className="post-list-item"
+                      itemScope
+                      itemType="http://schema.org/Article"
+                    >
+                      <header>
+                        <h2>
+                          <Link to={post.fields.slug} itemProp="url">
+                            <span itemProp="headline">{title}</span>
+                          </Link>
+                        </h2>
+                        <small>{post.frontmatter.date}</small>
+                      </header>
+                      <section>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: post.frontmatter.description || post.excerpt,
+                          }}
+                          itemProp="description"
+                        />
+                      </section>
+                    </article>
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
           )
-        })}
-      </ol>
+      }))}
     </Layout>
   )
 }
@@ -96,6 +114,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          blog
         }
       }
     }

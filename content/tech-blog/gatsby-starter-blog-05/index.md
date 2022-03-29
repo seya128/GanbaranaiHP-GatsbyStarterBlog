@@ -2,6 +2,8 @@
 title: GatsbyでHP作成 その5：画像やURLがはみ出す問題
 date: "2022-03-18T00:10:00.000Z"
 description: "Gatsby Starter Blogで、画像やURLがはみ出す問題の対処"
+blog: "Tech"
+tags: ["GatsbyJS"]
 ---
 
 ## 画像がはみ出す

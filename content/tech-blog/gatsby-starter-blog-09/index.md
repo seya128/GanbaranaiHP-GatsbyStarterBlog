@@ -3,6 +3,8 @@ title: GatsbyでHP作成 その9：投稿にヒーロー画像を追加
 date: "2022-03-22T23:00:00.000Z"
 description: "Gatsby Starter Blogで、投稿にヒーロー画像を追加します"
 image: "./tk-qJDkJRTedNw-unsplash.jpg"
+blog: "Tech"
+tags: ["GatsbyJS"]
 ---
 
 ブログの投稿にヒーロー画像を表示するようにしてみます。

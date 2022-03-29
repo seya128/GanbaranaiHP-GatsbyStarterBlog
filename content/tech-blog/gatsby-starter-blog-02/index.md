@@ -1,4 +1,21 @@
 ---
+title: GatsbyでHP作成 その2：ブログ記事を投稿
+date: "2022-03-17T18:40:00.000Z"
+description: "Gatsby Starter Blogでブログ記事を投稿してみます。"
+blog: "Tech"
+tags: ["GatsbyJS"]
+---
+
+[Gatsby Starter Blog](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-blog/)では、
+`content/blog/`の下に、記事のフォルダを作成し、その中に`index.md`を作成するようになっています。
+
+フォルダ名が、URLになるようです。
+
+`content/blog/gatsby-starter-blog-01`というフォルダを作成し、  
+その中に以下の内容の`index.md`を作成しました。
+
+`````md
+---
 title: GatsbyでHP作成 その1：インストール～ブログタイトルを変更
 date: "2022-03-17T18:00:00.000Z"
 description: "Gatsby Starter Blogをインストールし、ブログタイトルを変更、BIO表示の代わりに簡単なテキストを入れます"
@@ -87,3 +104,9 @@ if (posts.length === 0) {
 
 ここまでの修正で以下のような表示になりました。
 ![](https://i.gyazo.com/f94edc292dd721c40aa3d83de57b16f8.png)
+``````
+
+以下のような感じになりました。
+
+![](https://i.gyazo.com/e0f263b411a26fd7c1badf107516c325.png)
+

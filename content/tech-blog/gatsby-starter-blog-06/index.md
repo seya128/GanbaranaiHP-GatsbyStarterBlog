@@ -2,6 +2,8 @@
 title: GatsbyでHP作成 その6：記事ページのURLディレクトリを変更
 date: "2022-03-18T15:50:00.000Z"
 description: "Gatsby Starter Blogで、記事ページのURLディレクトリを変更する"
+blog: "Tech"
+tags: ["GatsbyJS"]
 ---
 
 Gatsby Starter Blogでは、ベースURL直下に投稿ページが作成されます。  

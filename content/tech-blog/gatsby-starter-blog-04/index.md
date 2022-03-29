@@ -2,6 +2,8 @@
 title: GatsbyでHP作成 その4：Cloudflare Pagesで公開
 date: "2022-03-17T20:20:00.000Z"
 description: "Gatsbyで作ったサイトをCloudflarePagesで公開します。"
+blog: "Tech"
+tags: ["GatsbyJS"]
 ---
 
 以下手順で、Gatsbyで作ったサイトをCloudflare Pagesで公開してみます。

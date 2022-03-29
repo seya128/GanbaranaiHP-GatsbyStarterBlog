@@ -4,6 +4,7 @@ date: "2022-03-25T17:00:00.000Z"
 description: "Gatsby Starter Blogで、Twitterの投稿を埋め込んでみました。"
 blog: "Tech"
 tags: ["GatsbyJS"]
+image: "a1d4e3093397f469edcd99043ab7ccbc.png"
 ---
 
 Blogに、Twitterの投稿を埋め込めるといいなと思いやってみました。

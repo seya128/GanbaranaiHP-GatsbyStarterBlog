@@ -6,10 +6,13 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostGrid from "../components/post-grid"
+import TopCard from "../components/top-card"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const all_posts = data.allMarkdownRemark.nodes
+
+  const about_posts = all_posts.filter(node => {return node.frontmatter.blog==="about"})
 
   const blogs = [
     {
@@ -52,11 +55,14 @@ const BlogIndex = ({ data, location }) => {
       <div>
         <p>がんばり過ぎていませんか？</p>
         頑張ることは素晴らしい。<br/>
-        しかし、頑張ることが目標ではないはず。<br/>
+        しかし、頑張ることが目的ではないはず。<br/>
         頑張り過ぎで疲弊しないよう、力を抜いて、楽しみながらいろいろなことができたらいいですよね。<br/>
         ガンバラナイは、がんばらない為のサービスや技術を提供していきます。
       </div>
       
+      <h3>がんばり過ぎる前に、ご相談ください</h3>
+      <TopCard posts={about_posts}></TopCard>
+
       {blogs.map((blog => {
         return(
           <div key={blog.label}>
@@ -94,7 +100,7 @@ export const pageQuery = graphql`
               gatsbyImageData(
                 layout: CONSTRAINED
                 transformOptions: {
-                  fit: CONTAIN
+                  fit: COVER
                   cropFocus: ATTENTION
                 }
                 aspectRatio: 2

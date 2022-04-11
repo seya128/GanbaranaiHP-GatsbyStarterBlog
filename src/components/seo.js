@@ -38,6 +38,7 @@ const Seo = ({ description, lang, title, image, topFlag }) => {
       {seo.title && <meta property="og:title" content={seo.title} />}
       {seo.description && <meta property="og:description" content={seo.description} />}
       {seo.image && <meta property="og:image" content={seo.image} />}
+      {seo.title && <meta property="og:image:alt" content={seo.title} />}
       <meta name="twitter:card" content="summary_large_image" />
       {seo.title && <meta name="twitter:title" content={seo.title} />}
       {seo.description && <meta name="twitter:description" content={seo.description} />}

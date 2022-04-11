@@ -1,5 +1,5 @@
 ---
-title: Gmaiの送信者間違いも防ぐ！GMailSend Address Checker
+title: Gmailの送信者間違いも防ぐ！GMailSend Address Checker
 date: "2022-04-11T17:30:00.000Z"
 description: "Gmailで複数のメールアドレスを使っていると、メール送信時に別のメールアドレスから送信してしまった！なんてことはありませんか？"
 image: "./119372aee0831be6cdd4f44e95e14570.png"

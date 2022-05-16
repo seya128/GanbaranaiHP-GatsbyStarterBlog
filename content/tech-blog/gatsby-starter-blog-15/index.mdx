@@ -1,0 +1,141 @@
+---
+title: GatsbyでHP作成 その15：コンテンツをMDXにする
+date: "2022-05-17T01:00:00.000Z"
+description: "Gatsby Starter Blogで、コンテンツをMDXで記述できるようにしてみました。"
+blog: "Tech"
+tags: ["GatsbyJS"]
+image: "data-layer-with-nodes.png"
+---
+マークダウンでコンテンツを記述してきましたが、Reactのコンポーネントも埋め込めるMDXで記述できるようにしてみます。
+
+
+以下サイトを参考に行ってみました。  
+[Gatsby製のマークダウンブログをmdxに置き換えた | きむそん.dev](https://kimuson.dev/blog/gatsby/replace_gatsby_blog_mdx/)
+
+## MDX用プラグインのインストール
+
+``` 
+$ yarn add gatsby-plugin-mdx gatsby-plugin-feed-mdx @mdx-js/mdx@v1 @mdx-js/react@v1
+$ yarn remove gatsby-transformer-remark gatsby-plugin-feed
+```
+`@mdx-js/mdx@v1`, `@mdx-js/react@v1`は、`@v1`をつけずにインストールしたところビルドでエラーが出ました。
+
+## gatsby-config.js修正
+
+``` diff
+module.exports = {
+  :
+  plugins: [
+    :
+    {
+-     resolve: `gatsby-transformer-remark`,
++     resolve: `gatsby-plugin-mdx`,
+      options: {
++       extensions: [`.mdx`, `.md`],
+-       plugins: [
++       gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 630,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          :
+        ],
+      },
+    },
+    :
+-   `gatsby-plugin-feed`,
++   `gatsby-plugin-feed-mdx`,
+    :
+```
+
+## gatsby-node.js
+
+``` diff
+ :
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  :
+  const result = await graphql(
+    `
+      {
+-       allMarkdownRemark(
++       allMdx(
+          :
+
+- const groups = result.data.allMarkdownRemark.group
++ const groups = result.data.allMdx.group
+  :
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+- if (node.internal.type === `MarkdownRemark`) {
++ if (node.internal.type === `Mdx`) {
+    const value = createFilePath({ node, getNode })
+    :
+exports.createSchemaCustomization = ({ actions }) => {
+  :
+-   type MarkdownRemark implements Node {
++   type Mdx implements Node {
+      :
+```
+
+## src/pages/index.js
+``` diff
+ :
+const BlogIndex = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+- const all_posts = data.allMarkdownRemark.nodes
++ const all_posts = data.allMdx.nodes
+
+  :
+export const pageQuery = graphql`
+  query {
+    :
+-   allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
++   allMdx(sort: { fields: [frontmatter___date], order: DESC })
+    :
+```
+
+## src/templates/blog-post.js
+``` diff
+ :
++ import { MDXRenderer } from "gatsby-plugin-mdx"
+ :
+const BlogPostTemplate = ({ data, location }) => {
+- const post = data.markdownRemark
++ const post = data.mdx
+  :
+  return (
+    <Layout location={location} title={siteTitle}>
+        :
+-       <section
+-         dangerouslySetInnerHTML={{ __html: post.html }}
+-         itemProp="articleBody"
+-       />
++       <MDXRenderer itemProp="articleBody">{post.body}</MDXRenderer>
+        :
+export const pageQuery = graphql`
+  query BlogPostBySlug(
+    :
+-   markdownRemark(id: { eq: $id }) {
++   mdx(id: { eq: $id }) {
+      id
+      excerpt(pruneLength: 160)
+-     html
++     body
+      :
+-   previous: markdownRemark(id: { eq: $previousPostId }) {
++   previous: mdx(id: { eq: $previousPostId }) {
+      :
+-   next: markdownRemark(id: { eq: $nextPostId }) {
++   next: mdx(id: { eq: $nextPostId }) {
+      :
+```
+

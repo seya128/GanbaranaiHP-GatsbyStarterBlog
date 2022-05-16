@@ -10,7 +10,7 @@ import TopCard from "../components/top-card"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const all_posts = data.allMarkdownRemark.nodes
+  const all_posts = data.allMdx.nodes
 
   const about_posts = all_posts.filter(node => {return node.frontmatter.blog==="about"})
 
@@ -84,7 +84,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
         fields {

@@ -4,7 +4,7 @@ date: "2022-03-23T12:00:00.000Z"
 description: "電子レンジでコーヒー焙煎をやってみました！"
 image: "./roasting_complete.jpg"
 blog: "ガンバラナイ"
-tags: ["コーヒー焙煎","LIFE"]
+tags: ["Coffe","LIFE"]
 ---
 
 がんばらない日常にコーヒーは欠かせませんね。  

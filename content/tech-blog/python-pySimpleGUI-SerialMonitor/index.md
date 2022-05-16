@@ -1,13 +1,14 @@
 ---
 title: PythonでGUIプログラム作成(シリアルモニターを作ってみた)
-date: "2022-05-26T15:00:00.000Z"
+date: "2022-05-16T15:00:00.000Z"
 description: "PySimpleGUIを使ってArduinoIDEのシリアルモニターもどきを作ってみました。"
 blog: "Tech"
 tags: ["Python","PySimpleGUI"]
 image: "Screenshot.png"
 ---
+import { Link } from 'gatsby'
 
-前回pySerialを使って、シリアルポートの一覧を取得することができたので、今回はPySimpleGUIを使ってArduinoIDEのシリアルモニターのようなプログラムを作成しました。
+<Link to="../python-pySerial-listPorts">前回</Link>pySerialを使って、シリアルポートの一覧を取得することができたので、今回はPySimpleGUIを使ってArduinoIDEのシリアルモニターのようなプログラムを作成しました。
 
 ## PySimpleGUIとは
 

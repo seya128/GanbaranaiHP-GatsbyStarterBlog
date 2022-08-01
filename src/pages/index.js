@@ -33,6 +33,7 @@ const BlogIndex = ({ data, location }) => {
           src="../images/mori.jpg" 
           alt="はーつん"
           layout="fullWidth"
+          loading="eager"
           />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -50,6 +51,7 @@ const BlogIndex = ({ data, location }) => {
         src="../images/mori.jpg" 
         alt="はーつん"
         layout="fullWidth"
+        loading="eager"
       />
       
       <div>

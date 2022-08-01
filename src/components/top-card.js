@@ -14,7 +14,7 @@ const TopCard = ({posts}) => {
           <section key={index} className={styles.item}>
               <div className={styles.image}>
                 {image && (
-                <GatsbyImage image={image} alt={post.frontmatter.title} className={styles.image}/>
+                <GatsbyImage image={image} alt={post.frontmatter.title} className={styles.image} loading="lazy"/>
                 )}
               </div>
               <section className={styles.section}>

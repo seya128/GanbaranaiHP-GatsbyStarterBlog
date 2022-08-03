@@ -1,0 +1,159 @@
+---
+title: GatsbyでHP作成 その15：MDX対応
+date: "2022-08-2T18:00:00.000Z"
+description: "Gatsby Starter BlogをMDX対応"
+blog: "Tech"
+tags: ["GatsbyJS","MDX"]
+image: "3239f50d9dda6761c2097191314cc4da.png"
+---
+
+import { Link } from "gatsby"
+
+ブログの記事をMDXで記述できるようにします。
+
+## MDX対応
+
+[【GatsbyJS製ブログ】MDXを使えるようにする！あと書き方とか！ | Bear-Fruit](https://bear-fruit.online/how-to-use-mdx/)  
+こちらのサイトを参考に対応しました。
+
+
+### gatsby-plugin-mdxとgatsby-plugin-feed-mdxをインストール
+```
+$ yarn add gatsby-plugin-mdx gatsby-plugin-feed-mdx @mdx-js/mdx@v1 @mdx-js/react@v1
+```
+
+### gatsby-config.jsのgatsby-transformer-remarkをgatsby-plugin-mdxに変えていく
+
+```js{2,4-5,27}:title=gatsby-config.js
+    {
+      resolve: `gatsby-plugin-mdx`, //←`gatsby-transformer-remark`から変更
+      options: {
+        extensions: [`.mdx`, `.md`], //←追加
+        gatsbyRemarkPlugins: [　//←pluginsから変更
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 630,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          `gatsby-remark-prismjs-title`,
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
+      },
+      ：
+      ：
+      {
+      resolve: `gatsby-plugin-feed-mdx`, //←`gatsby-plugin-feed`から変更
+      ：
+      ：
+```
+
+### GraphQLのクエリを変更していく
+
+gatsby-node.js、blog-post.js、などのクエリ部分を以下のように書き換えていきます。
+
+* allMarkdownRemark → allMdx
+* MarkdownRemark → Mdx
+* markdownRemark → mdx
+* html → body
+
+
+
+### MDXを展開する部分（blog-post.jsなど）をMDXRendererに書き換える
+
+blog-post.jsなど、マークダウンファイルを読み込む以下の部分を変更します。
+
+```js:title=blog-post.js
+        <section
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          itemProp="articleBody"
+        />
+```
+↓
+```js:title=blog-post.js
+import { MDXRenderer } from "gatsby-plugin-mdx"
+　：
+　：
+<MDXRenderer
+  frontmatter={post.frontmatter} //※
+  itemProp="articleBody"
+>
+  {post.body}
+</MDXRenderer>
+```
+
+
+自作のpost-grid.js,top-crad.jsは、そのままでOKでした。  
+(MDXRenderer使うとエラーになる)
+```js:title=post-grid.js
+                <p className={styles.p}
+                  dangerouslySetInnerHTML={{
+                    __html: post.frontmatter.description || post.excerpt,
+                  }}
+                  itemProp="description"
+                />
+```
+
+## MDXの書き方
+
+### import
+
+Reactコンポーネントをimportして、利用することができます。
+
+#### GatsbyのLinkコンポーネントを使ってみる
+
+Gatsbyのページ遷移は通常のリンクでなく`<Link>`コンポーネントで遷移することで必要なデータのみを読み込んで高速なページ遷移を行っています。  
+
+まずは通常のリンク（再読み込みになって遅い）
+```md:title=index.mdx
+* [home](/)  
+* [VSCodeのRemoteContainerが激遅だったので対処してみた | ガンバラナイ](/tech-blog/vscode-devcontainer-mount/)
+```
+* [home](/)  
+* [VSCodeのRemoteContainerが激遅だったので対処してみた | ガンバラナイ](/tech-blog/vscode-devcontainer-mount/)
+
+`<Link>`コンポーネントを使ったリンク（再読み込みなしで早い）
+```jsx:title=index.mdx
+import { Link } from "gatsby"
+* <Link to="/">Home</Link>  
+* <Link to="/tech-blog/vscode-devcontainer-mount/">VSCodeのRemoteContainerが激遅だったので対処してみた | ガンバラナイ]</Link>
+```
+* <Link to="/">Home</Link>  
+* <Link to="/tech-blog/vscode-devcontainer-mount/">VSCodeのRemoteContainerが激遅だったので対処してみた | ガンバラナイ]</Link>
+
+### MDX Embed
+
+プラグインでいろいろなサービスを埋め込むこともできます。
+
+#### プラグインインストール
+
+```
+$ yarn add mdx-embed gatsby-plugin-mdx-embed
+``` 
+
+```jsx:title=gatsby-config.js
+  ：
+  plugins: [
+    ：
+    `gatsby-plugin-mdx-embed`,
+    ：
+  ]
+  ：
+```
+
+#### ツイッターの埋め込み
+
+[いろいろなサービスの埋め込み](https://www.mdx-embed.com/?path=/docs/introduction--page)ができますが、以下のようにツイッターの埋め込みをしてみました。
+
+```jsx:title=index.mdx
+<Tweet tweetLink="ganbaranai_tech/status/1549377905704452096"/>
+```
+<Tweet tweetLink="ganbaranai_tech/status/1549377905704452096"/>

@@ -31,9 +31,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`, //←`gatsby-transformer-remark`から変更
       options: {
-        plugins: [
+        extensions: [`.mdx`, `.md`], //←追加
+        gatsbyRemarkPlugins: [  //←pluginsから変更
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -50,26 +51,27 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-plugin-image`,
-          {
-            resolve: `gatsby-plugin-sharp`,
-            options: {
-              defaults: {
-                //formats: [`auto`, `webp`],
-                placeholder: `blurred`,
-                //quality: 50,
-                //breakpoints: [750, 1080, 1366, 1920],
-                //backgroundColor: `transparent`,
-                tracedSVGOptions: {},
-                blurredOptions: {},
-                jpgOptions: {},
-                pngOptions: {},
-                webpOptions: {},
-                avifOptions: {},
-              },
-            },
-          },
         ],
+      },
+    },
+    `gatsby-plugin-mdx-embed`,
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          //formats: [`auto`, `webp`],
+          placeholder: `blurred`,
+          //quality: 50,
+          //breakpoints: [750, 1080, 1366, 1920],
+          //backgroundColor: `transparent`,
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
       },
     },
     `gatsby-transformer-sharp`,
@@ -97,25 +99,25 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map(node => {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.body }],
                 })
               })
             },
             query: `
               {
-                allMarkdownRemark(
+                allMdx(
                   sort: { order: DESC, fields: [frontmatter___date] },
                 ) {
                   nodes {
                     excerpt
-                    html
+                    body
                     fields {
                       slug
                     }

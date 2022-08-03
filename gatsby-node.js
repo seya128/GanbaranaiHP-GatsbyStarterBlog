@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        allMdx(
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
         ) {
@@ -41,7 +41,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
 
-  const groups = result.data.allMarkdownRemark.group
+  const groups = result.data.allMdx.group
 
   for (const {edges} of groups) {
     if (edges.length > 0) {
@@ -68,7 +68,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode })
 
     createNodeField({
@@ -104,7 +104,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       twitter: String
     }
 
-    type MarkdownRemark implements Node {
+    type Mdx implements Node {
       frontmatter: Frontmatter
       fields: Fields
     }

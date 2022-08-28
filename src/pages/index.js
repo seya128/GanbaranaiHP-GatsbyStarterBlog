@@ -1,6 +1,7 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -10,18 +11,20 @@ import TopCard from "../components/top-card"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const all_posts = data.allMdx.nodes
+  const all_posts = data.allMdx.group
 
-  const about_posts = all_posts.filter(node => {return node.frontmatter.blog==="about"})
+  const about_posts = all_posts.find(group => group.fieldValue==="about").edges.map(edge => edge.node)
 
   const blogs = [
     {
       label: "ガンバラナイBLOG",
-      posts: all_posts.filter(node => {return node.frontmatter.blog==="ガンバラナイ"})
+      posts: all_posts.find(group => group.fieldValue==="ガンバラナイ").edges.map(edge => edge.node),
+      link: "/blog/"
     },
     {
       label: "技術BLOG",
-      posts: all_posts.filter(node => {return node.frontmatter.blog==="Tech"})
+      posts: all_posts.find(group => group.fieldValue==="Tech").edges.map(edge => edge.node),
+      link: "/tech-blog/"
     }
   ]
 
@@ -68,8 +71,9 @@ const BlogIndex = ({ data, location }) => {
       {blogs.map((blog => {
         return(
           <div key={blog.label}>
-            <h3>{blog.label}</h3>
+            <h3><Link to={blog.link}>{blog.label}</Link></h3>
             <PostGrid posts={blog.posts}></PostGrid>
+            <p><Link to={blog.link}>&gt;&gt;もっと見る</Link></p>
           </div>
           )
       }))}
@@ -87,30 +91,35 @@ export const pageQuery = graphql`
       }
     }
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          blog
-          image {
-            childImageSharp {
-              gatsbyImageData(
-                layout: CONSTRAINED
-                transformOptions: {
-                  fit: COVER
-                  cropFocus: ATTENTION
+      group(field: frontmatter___blog, limit: 4) {
+        fieldValue
+        edges {
+          node {
+            excerpt
+            fields {
+              slug
+            }
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              title
+              description
+              blog
+              image {
+                childImageSharp {
+                  gatsbyImageData(
+                    layout: CONSTRAINED
+                    transformOptions: {
+                      fit: COVER
+                      cropFocus: ATTENTION
+                    }
+                    aspectRatio: 2
+                    width: 800
+                  )
                 }
-                aspectRatio: 2
-                width: 800
-              )
+              }
             }
           }
-        }
+        }  
       }
     }
   }

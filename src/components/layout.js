@@ -26,7 +26,10 @@ const Layout = ({ location, title, children }) => {
       <main>{children}</main>
       <footer>
         <div>
-          <Link to="/">HOME</Link>
+          <Link to="/">HOME</Link>　
+          <Link to="/blog">ガンバラナイBLOG</Link>　
+          <Link to="/tech-blog">技術BLOG</Link>　
+
         </div>
         © {new Date().getFullYear()}, Built with
         {` `}

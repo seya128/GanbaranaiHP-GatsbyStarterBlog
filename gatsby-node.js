@@ -10,6 +10,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       {
         allMdx(
           sort: { fields: [frontmatter___date], order: ASC }
+          filter: { frontmatter: { blog: { ne: "about" } } }
           limit: 1000
         ) {
           group(field: frontmatter___blog) {

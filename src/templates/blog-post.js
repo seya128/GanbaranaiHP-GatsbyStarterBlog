@@ -30,9 +30,14 @@ const BlogPostTemplate = ({ data, location }) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <hr/>
           <p>{post.frontmatter.date}</p>
-          {image && (<GatsbyImage image={image} alt={post.frontmatter.title} />)}
+          {image && (<GatsbyImage image={image} alt={post.frontmatter.title} loading="eager"/>)}
         </header>
-        <MDXRenderer itemProp="articleBody">{post.body}</MDXRenderer>
+        <MDXRenderer
+          frontmatter={post.frontmatter} //※
+          itemProp="articleBody"
+        >
+          {post.body}
+        </MDXRenderer>
         <hr />
         <footer>
           {/*<Bio />*/}

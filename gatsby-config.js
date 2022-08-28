@@ -31,10 +31,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: `gatsby-plugin-mdx`, //←`gatsby-transformer-remark`から変更
       options: {
-        extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [
+        extensions: [`.mdx`, `.md`], //←追加
+        gatsbyRemarkPlugins: [  //←pluginsから変更
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -51,26 +51,27 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-plugin-image`,
-          {
-            resolve: `gatsby-plugin-sharp`,
-            options: {
-              defaults: {
-                formats: [`auto`, `webp`],
-                placeholder: `dominantColor`,
-                quality: 50,
-                breakpoints: [750, 1080, 1366, 1920],
-                backgroundColor: `transparent`,
-                tracedSVGOptions: {},
-                blurredOptions: {},
-                jpgOptions: {},
-                pngOptions: {},
-                webpOptions: {},
-                avifOptions: {},
-              },
-            },
-          },
         ],
+      },
+    },
+    `gatsby-plugin-mdx-embed`,
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          //formats: [`auto`, `webp`],
+          placeholder: `blurred`,
+          //quality: 50,
+          //breakpoints: [750, 1080, 1366, 1920],
+          //backgroundColor: `transparent`,
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
       },
     },
     `gatsby-transformer-sharp`,
@@ -81,7 +82,59 @@ module.exports = {
     //     trackingId: `ADD YOUR TRACKING ID HERE`,
     //   },
     // },
-    `gatsby-plugin-feed-mdx`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes.map(node => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.body }],
+                })
+              })
+            },
+            query: `
+              {
+                allMdx(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  nodes {
+                    excerpt
+                    body
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "GANBARANAI RSS Feed",
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

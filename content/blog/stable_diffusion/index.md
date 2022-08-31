@@ -1,10 +1,10 @@
 ---
 title: AIにお絵描きをしてもらった
 date: "2022-08-28T14:30:00.000Z"
-description: "話題の画像生成AI「Stabele Diffusion」を簡単に試してみました"
-image: "./StabeleDiffusion.jpg"
+description: "話題の画像生成AI「Stable Diffusion」を簡単に試してみました"
+image: "./StableDiffusion.jpg"
 blog: "ガンバラナイ"
-tags: ["AI","StabeleDiffusion"]
+tags: ["AI","StableDiffusion"]
 ---
 巷で話題になっている画像生成AIを簡単に試してみました。
 
@@ -14,9 +14,9 @@ tags: ["AI","StabeleDiffusion"]
 最近は、簡単にある程度の品質の画像を生成してくれるようになったということで、少し試してみました。
 
 
-## Stabele Diffusion
+## Stable Diffusion
 
-画像生成AIもいろいろなシステムがあるのですが、つい最近オープンソースとして公開された「Stabele Diffusion」を試してみました。
+画像生成AIもいろいろなシステムがあるのですが、つい最近オープンソースとして公開された「Stable Diffusion」を試してみました。
 
 デモサイトもあって、誰でも無料で簡単に画像生成を試すことができます。  
 [Stable Diffusion - a Hugging Face Space by stabilityai](https://huggingface.co/spaces/stabilityai/stable-diffusion)
@@ -25,16 +25,16 @@ tags: ["AI","StabeleDiffusion"]
 ただし、多くのユーザーが利用すると、順番に生成するため待ち時間かそれなりに発生してしまうようです。  
 順番待ちがなければ、４つの画像が数秒で生成されます。
 
-## 自分だけのStabele Diffusion
+## 自分だけのStable Diffusion
 
-高性能なPCを持っている場合は、自分のPCにStabele Diffusionをインストールして自分だけで利用することも可能です。  
+高性能なPCを持っている場合は、自分のPCにStable Diffusionをインストールして自分だけで利用することも可能です。  
 ただし、いろいろな環境を整える必要があり、PCの性能以外にもハードルが高い部分が結構あります。
 
-もっと、簡単に試すには、Googleが提供している「Colaboratory」というPython実行環境を利用して、「Stabele Diffusion」を自分専用に動作させることができます。  
+もっと、簡単に試すには、Googleが提供している「Colaboratory」というPython実行環境を利用して、「Stable Diffusion」を自分専用に動作させることができます。  
 クラウド環境での実行なので、自分のPCのスペックが低くても大丈夫です。
 
 [画像生成AI「Stable Diffusion」を低スペックPCでも無料かつ待ち時間なしで使う方法まとめ - GIGAZINE](https://gigazine.net/news/20220824-stable-diffusion-google-colaboratory/)  
-こちらの記事の通りにやれば簡単に「Stabele Diffusion」をインストールできます。
+こちらの記事の通りにやれば簡単に「Stable Diffusion」をインストールできます。
 
 さすがに無料のクラウド環境なので、画像１枚生成するのに３０秒ほどかかり、デモサイトより時間はかかりますが、他の人の順番待ちをしなくてもいいのが良いですね。
 

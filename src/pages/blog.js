@@ -31,7 +31,7 @@ const BlogIndex = ({ data, location }) => {
       
       {blogs.map((blog => {
         return(
-          <div key={blog.label}>
+          <div key={blog.label} class="container mx-auto px-1 sm:px-6 lg:px-8">
             <h1>{blog.label}</h1>
             <div><p>{blog.description}</p></div>
             <section>

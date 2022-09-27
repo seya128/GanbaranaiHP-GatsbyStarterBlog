@@ -22,7 +22,7 @@ const BlogPostTemplate = ({ data, location }) => {
         image={imageSrc}
       />
       <article
-        className="blog-post"
+        className="mx-auto max-w-3xl"
         itemScope
         itemType="http://schema.org/Article"
       >

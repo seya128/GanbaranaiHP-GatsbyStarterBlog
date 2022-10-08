@@ -22,13 +22,13 @@ const BlogPostTemplate = ({ data, location }) => {
         image={imageSrc}
       />
       <article
-        className="mx-auto max-w-3xl"
+        className="mx-auto max-w-3xl markdown-body"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <hr/>
+          {/* <hr/> */}
           <p>{post.frontmatter.date}</p>
           {image && (<GatsbyImage image={image} alt={post.frontmatter.title} loading="eager"/>)}
         </header>
@@ -38,7 +38,7 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           {post.body}
         </MDXRenderer>
-        <hr />
+        {/* <hr /> */}
         <footer>
           {/*<Bio />*/}
         </footer>

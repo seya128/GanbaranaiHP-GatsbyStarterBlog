@@ -7,7 +7,8 @@ import FooterNavi from "../components/FooterNavi"
 const menu_items = [
   ['HOME', '/'],
   ['ガンバラナイBLOG', '/blog'],
-  ['技術BLOG', '/tech-blog']
+  ['技術BLOG', '/tech-blog'],
+  ['お問い合わせ', 'https://docs.google.com/forms/d/e/1FAIpQLSdOhqAu7m2K817j6aP2GuFPbXsYqnktg3s00IsF54R3nl3LQw/viewform?usp=sf_link']
 ]
 
 const Layout = ({ location, title, children }) => {

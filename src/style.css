@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("github-markdown-light.css");
+.markdown-body ol {
+  list-style: decimal;
+}
+.markdown-body ul {
+  list-style: disc;
+}
+
 :root {
   --maxWidth-none: "none";
   --maxWidth-xs: 20rem;
@@ -182,7 +190,7 @@ ol {
   padding: var(--spacing-0);
   margin-bottom: var(--spacing-8);
   list-style-position: inside;
-  list-style-image: none;
+  /* list-style-image: none; */
 }
 
 ul li,

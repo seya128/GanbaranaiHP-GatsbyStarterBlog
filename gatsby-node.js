@@ -1,4 +1,5 @@
 const path = require(`path`)
+const _ = require("lodash")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -27,6 +28,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
+        tagsGroup: allMdx(
+          filter: { frontmatter: { blog: { ne: "about" } } }
+          limit: 1000
+        ) {
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
+        }
       }
     `
   )
@@ -44,10 +53,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const groups = result.data.allMdx.group
 
+  //ブログ別に記事ページ生成
   for (const {edges} of groups) {
     if (edges.length > 0) {
       edges.forEach(({node}, index) => {
-        console.log(node.frontmatter.blog)
+        //console.log(node.frontmatter.blog)
         const previousPostId = index === 0 ? null : edges[index - 1].node.id
         const nextPostId = index === edges.length - 1 ? null : edges[index + 1].node.id
 
@@ -63,6 +73,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     }
   }
+
+  //タグ別記事一覧ページ生成
+  const tags = result.data.tagsGroup.group
+  tags.forEach(tag => {
+    console.log(tag.fieldValue)
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: path.resolve(`./src/templates/tags.js`),
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
+  })
+
 }
 
 

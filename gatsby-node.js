@@ -77,7 +77,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   //タグ別記事一覧ページ生成
   const tags = result.data.tagsGroup.group
   tags.forEach(tag => {
-    console.log(tag.fieldValue)
+    // console.log(tag.fieldValue)
     createPage({
       path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: path.resolve(`./src/templates/tags.js`),

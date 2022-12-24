@@ -20,7 +20,9 @@ const PostGrid = ({posts}) => {
                 )}
               </div>
               <section className={styles.section}>
-                <div className={styles.date}>{post.frontmatter.date}</div>
+                <div className={styles.date}>
+                  {post.frontmatter.date}
+                </div>
                 <h2 className={styles.title}>
                   {title}
                 </h2>

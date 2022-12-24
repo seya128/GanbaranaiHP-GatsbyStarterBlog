@@ -14,7 +14,7 @@ const HeaderNavi = ({menuItems}) => {
               (isNavOpen ? `visible left-0 mt-0` : `invisible mt-[-600px]`) +
               `
                 list-none flex flex-col text-center mx-0 mb-0 z-50
-                fixed top-0 left-0 w-full h-52 bg-stone-600
+                fixed top-0 left-0 w-full bg-stone-600
                 duration-500 md:transition-none md:mt-[-600px]
               `}>
             <ul>

@@ -1,0 +1,75 @@
+---
+title: 外部リンクをカード形式で表示する(はてなブログカード編)
+date: "2022-12-26T22:00:00.000Z"
+description: "Gatsbyで外部リンクを記事に入れる際に、カード形式で表示する方法を試してみました"
+blog: "Tech"
+tags: ["GatsbyJS"]
+image: "blogcard.png"
+---
+
+Gatsbyで外部リンクを記事に入れる際に、カード形式で表示する方法を試してみました。
+
+一番簡単にできそうなはてなブログのブログカード機能を使ってみました。
+
+## はてなブログカード
+
+``` html
+<iframe title="GMailSend Address Checker - 誤送信防止 -" src="https://hatenablog-parts.com/embed?url=https://gmsck.seya.work/" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+<iframe title="The Fastest Frontend for the Headless Web | Gatsby" src="https://hatenablog-parts.com/embed?url=https://www.gatsbyjs.com/" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+```
+上記のようなコードを埋め込むことで、以下のように表示できます。
+
+<iframe title="GMailSend Address Checker - 誤送信防止 -" src="https://hatenablog-parts.com/embed?url=https://gmsck.seya.work/" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+<iframe title="The Fastest Frontend for the Headless Web | Gatsby" src="https://hatenablog-parts.com/embed?url=https://www.gatsbyjs.com/" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+
+### コードの説明
+
+基本は以下のようになります。
+
+``` html
+<iframe src="https://hatenablog-parts.com/embed?url=【ページのURL】"></iframe>
+```
+
+サイズ等は、`style`で指定します。
+```
+style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;"
+```
+* `width:100%;`　横幅100%
+* `height:150px;`　縦150ピクセル
+* `max-width:600px;` 横幅は最大でも600px
+* `margin-left:auto; margin-right:auto;` 真ん中に表示
+
+
+### Chrome拡張機能「Create Link」で簡単にコード作成
+
+Chrome拡張機能「Create Link」を使うことで、簡単に上記のコードを生成しコピーすることが可能です。
+
+<iframe title="Create Link - Chrome ウェブストア" src="https://hatenablog-parts.com/embed?url=https://chrome.google.com/webstore/detail/create-link/gcmghdmnkfdbncmnmlkkglmnnhagajbm" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+
+Create Linkの設定画面で、以下のフォーマットを追加します。
+```
+<iframe title="%text%" src="https://hatenablog-parts.com/embed?url=%url%" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+```
+
+使い方は、
+1. リンクしたいページを開く
+2. CreateLinkのアイコンを押す
+3. 上記で追加したフォーマットを選ぶ(これではてなブログカードの埋め込みコードがコピーされます)
+4. ブログに張り付ける
+
+### Gatsbyjs以外でも使えます
+
+この方法は、Gatbyjsでなくてもiframeを埋め込めるブログやWEBページで利用できます。
+
+
+## 参考にしたサイト
+<iframe title="はてなブログカードのような美しい外部リンクをクリック一発で作成する方法" src="https://hatenablog-parts.com/embed?url=https://nelog.jp/hatenablogcard" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+<iframe title="【簡単】きれいな『はてなブログカード』リンクをブログやサイトで使う方法 | Macアプリ開発ラボ" src="https://hatenablog-parts.com/embed?url=https://materializer.co/lab/blog/2" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+
+## 他の方法
+
+Gatsbyjsらしくプラグインやコンポーネントでブログカードを作成できる方法もあるようです。  
+機会があれば試してみたいと思います。
+<iframe title="【Gatsby】コードブロックとリンクカードをデザインする" src="https://hatenablog-parts.com/embed?url=https://zenn.dev/ymmmtym/articles/gatsby-codeblock-linkcard-design#fnref-7be4-2" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+
+<iframe title="Gatsby製ブログのリンクをカード表示にする" src="https://hatenablog-parts.com/embed?url=https://yayo1.com/blog/gatsby_blog_linkcard/" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>

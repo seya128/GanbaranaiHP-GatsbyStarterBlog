@@ -1,0 +1,263 @@
+---
+title: VORON v0.1にKIRIGAMIベッドをつけてみました
+date: "2023-01-02T18:00:00.000Z"
+description: "KIRIGAMIベッドに交換すれば剛性が上がると思い交換しました。交換した際の手順などを残しておきます。"
+blog: "Tech"
+tags: ["3Dプリンター","Voron01"]
+image: "IMG_20221228_162606.jpg"
+---
+Voron V0.1にKlicky probe系のレベルセンサーをつけたけど、ベッドの手前側を計測する際にベッドを0.1mmほど押し下げるようで正確な計測が出来ていません。
+
+KIRIGAMIベッドにすれば剛性があがって押し下げなくなるのでは？と、さっそくKIRIGAMIベッドを装着してみました。
+
+
+# KIRIGAMI BED
+
+KIRIGAMIベッドは、以下のサイトで公開されています。
+<iframe title="GitHub - christophmuellerorg/voron_0_kirigami_bed" src="https://hatenablog-parts.com/embed?url=https://github.com/christophmuellerorg/voron_0_kirigami_bed" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+
+## 購入したもの
+
+<iframe title="Funsor ステンレス鋼の3Dプリンターボルソンv0.1,3Dプリンター用のアルミニウムナット付きサポート,アップグレード,0.1/0| | - AliExpress" src="https://hatenablog-parts.com/embed?url=https://ja.aliexpress.com/item/1005003979150627.html" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+
+アルミ製のナットブロックと、必要なネジ類が付属していました。
+
+## 折り曲げ調整
+
+- 調整前
+
+![IMG_20221225_114157.jpg](IMG_20221225_114157.jpg)
+
+![IMG_20221225_114131.jpg](IMG_20221225_114131.jpg)
+
+上下方向にちょっとずれているので調整。
+
+- 調整後
+
+![IMG_20221227_160907.jpg](IMG_20221227_160907.jpg)
+
+![IMG_20221227_160838.jpg](IMG_20221227_160838.jpg)
+
+卓上バイスに挟んで、ハンマーでたたきながら調整しました。
+
+挟んだり、叩いたりしたところの塗装が剥げたので、一応マッキーで塗っておきました。
+
+## プリント部品
+
+<iframe title="voron_0_kirigami_bed/STL at master · christophmuellerorg/voron_0_kirigami_bed · GitHub" src="https://hatenablog-parts.com/embed?url=https://github.com/christophmuellerorg/voron_0_kirigami_bed/tree/master/STL" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+
+- [igus_chain_mount.stl](https://github.com/christophmuellerorg/voron_0_kirigami_bed/blob/master/STL/igus_chain_mount.stl)  x1
+- [kirigami_wago_mount.stl](https://github.com/christophmuellerorg/voron_0_kirigami_bed/blob/master/STL/kirigami_wago_mount.stl) x2   温度ヒューズの配線と、温度センサーの配線も行うので２個
+- [v0_z_rail_dual_align.stl](https://github.com/christophmuellerorg/voron_0_kirigami_bed/blob/master/STL/tools/v0_z_rail_dual_align.stl) x1   使うかわからないけど、念のため
+
+- [Front_Bed_Mount_x1.stl](https://github.com/VoronDesign/VoronUsers/blob/master/printer_mods/Kosh42EFG/kirigami_bed_front/STLs/Front_Bed_Mount_x1.stl)　　前面の目隠し
+
+- [https://thangs.com/designer/crankshaft/3d-model/Voron 0.1 Magnetic Bed Guides-31351](https://thangs.com/designer/crankshaft/3d-model/Voron%25200.1%2520Magnetic%2520Bed%2520Guides-31351)　便利に使っていたこちらも新たにプリントしなおし
+
+## 取付
+
+<YouTube youTubeId="eOnNvhircn8" />
+
+[0:18](https://www.youtube.com/watch?v=eOnNvhircn8&t=18s) ヒートセットインサート
+
+[0:50](https://www.youtube.com/watch?v=eOnNvhircn8&t=50s) パネル取り外し
+
+[1:02](https://www.youtube.com/watch?v=eOnNvhircn8&t=62s) ネオピクセルの配線をケーブルチェーンに通す
+
+[1:18](https://www.youtube.com/watch?v=eOnNvhircn8&t=78s) Zモーター取り外し
+
+[1:38](https://www.youtube.com/watch?v=eOnNvhircn8&t=98s) Z軸レール取り外し
+
+[2:02](https://www.youtube.com/watch?v=eOnNvhircn8&t=122s) ベッド取り外し
+
+[2:18](https://www.youtube.com/watch?v=eOnNvhircn8&t=138s) レールについているパーツ取り外し
+
+[3:00](https://www.youtube.com/watch?v=eOnNvhircn8&t=180s) Zレール取付
+
+[3:12](https://www.youtube.com/watch?v=eOnNvhircn8&t=192s) KIRIGAMIベッド準備
+
+[3:56](https://www.youtube.com/watch?v=eOnNvhircn8&t=236s) 配線準備
+
+[4:26](https://www.youtube.com/watch?v=eOnNvhircn8&t=266s) KIRIGAMIベッドフレーム取付
+
+[4:40](https://www.youtube.com/watch?v=eOnNvhircn8&t=280s) Zモーター取り付け
+
+[4:56](https://www.youtube.com/watch?v=eOnNvhircn8&t=296s) 目隠しバンパー取付
+
+[5:33](https://www.youtube.com/watch?v=eOnNvhircn8&t=333s) ベッド取付
+
+### ヒートセットインサート
+
+![IMG_20221227_161625.jpg](IMG_20221227_161625.jpg)
+
+### パネル取り外し
+
+右側のアクリルパネルを取り外しました。
+
+ナットがずれるとあとで取り付けが大変なので、マスキングテープで固定しておきました。（気休めかも？）
+
+![IMG_20221227_163402.jpg](IMG_20221227_163402.jpg)
+
+### ネオピクセルの配線をケーブルチェーンに通す
+
+今回はネオピクセルはつけないので、この作業はしませんでした。
+
+### Zモーター取り外し
+
+Zモーターを取り付けている４つのねじを外します。
+
+まず手前の２本を緩めます。
+
+![IMG_20221227_165115.jpg](IMG_20221227_165115.jpg)
+
+底側の２本を外すのにひっくり返して作業したほうが、ナットの位置がずれずにすむと思い、端材を下駄にして作業しました。
+
+![IMG_20221227_165450.jpg](IMG_20221227_165450.jpg)
+
+![IMG_20221227_165808.jpg](IMG_20221227_165808.jpg)
+
+ボールねじを回しながらモーターを外しますが、このときナットの位置がずれないように注意していたのですが、やっぱりずれました。
+
+それでも、一応マスキングテープでナットを固定しておきました。
+
+### ベッド取り外し
+
+動画ではレールを先に取り外していますが、配線を外せるようにしている場合は先にベッドを取り外しておいたほうがよさそうです。
+
+Zモーターを外す前にベッド外しておけばよかった。
+
+![IMG_20221227_172128.jpg](IMG_20221227_172128.jpg)
+
+### Z軸レール取り外し
+
+Z軸のレールを取り外していきますが、レールからブロックが抜けてしまうのを防止する結束バンドを４本用意してから作業に取り掛かったほうがよさそうです。
+
+レールのねじを外したら、すぐにレールの端の穴４つに結束バンドを差し込んでブロックが抜けないようにします。
+
+とりあえず４本全部差し込んでから結束バンドを輪っかにするのが安心です。
+
+![IMG_20221227_173922.jpg](IMG_20221227_173922.jpg)
+
+ベッドの配線を束ねている結束バンドを切って、ケーブルチェーンの端を外します。
+
+![IMG_20221227_174600.jpg](IMG_20221227_174600.jpg)
+
+### レールについているパーツ取り外し
+
+まずは、ケーブルのチェーンの先端、ベッドフレームを外します。
+
+その後、リードスクリューナットやWAGOホルダーも外します。
+
+![IMG_20221227_181717.jpg](IMG_20221227_181717.jpg)
+
+さらに、リニアブロックについているパーツも取り外します。
+
+![IMG_20221227_182058.jpg](IMG_20221227_182058.jpg)
+
+このあと自分は、リニアレールの掃除や、ゴロゴロするブロックを分解掃除しました。
+
+ゴロゴロするブロックは、分解掃除してもゴロゴロでした・・・・
+
+ついでに、リードスクリューも掃除して錆防止に薄くグリスを塗っておきました。
+
+### Zレール取付
+
+プリントしておいた治具を使ってZレールを取り付けました。
+
+![IMG_20221227_212342.jpg](IMG_20221227_212342.jpg)
+
+### KIRIGAMIベッド準備
+
+- ケーブルチェーンマウント
+
+付属の8mmの長さのネジでは長すぎて締めれなかったので、手持ちの6mmの長さのネジを使用しました。
+
+![IMG_20221228_111524.jpg](IMG_20221228_111524.jpg)
+
+- ナットマウント
+
+後で微調整すると思いますが、ひとまずできるだけセンターになるようにとめました。
+
+![IMG_20221228_111600.jpg](IMG_20221228_111600.jpg)
+
+KIRIGAMIフレームへの取り付けのビスも上の２つは付属の8mmの長さでは長すぎたので、手持ちの6mmを使いましたが、それでも少し長かったのでワッシャーをかましました。
+
+![IMG_20221228_113752.jpg](IMG_20221228_113752.jpg)
+
+- WAGOマウント
+
+WAGOマウントを２つつけて、コネクターを５個取り付けました。
+
+こちらは８ｍｍの長さのビスで問題なかったです。
+
+![IMG_20221228_114704.jpg](IMG_20221228_114704.jpg)
+
+### 配線準備
+
+すべての配線をWAGOコネクターで接続するようにもともとしてあったので、特に何もすることはなかったです。
+
+### KIRIGAMIベッドフレーム取付
+
+こちらも付属のビスではちょっと長かったので、ワッシャーをかませました。
+
+![IMG_20221228_131124.jpg](IMG_20221228_131124.jpg)
+
+レールをプリントした治具を使って固定したのと、KIRIGAMIフレームの精度の良さなのか一発でなめらか動作するように取り付けられました。
+（リニアガイドのゴリゴリはそのままだけど・・・・）
+
+### Zモーター取り付け
+
+Zモーターの取り付けは、取り外した時と同様に、端材を下駄にしてさかさまにして作業しました。
+
+![IMG_20221228_160411.jpg](IMG_20221228_160411.jpg)
+
+Zスクリューを入れる際には、アンチバックラッシュのバネともう一つのナットも一緒に入れるのを忘れないようにしましょう。
+
+![IMG_20221228_160441.jpg](IMG_20221228_160441.jpg)
+
+モーター固定の位置は、ベッドを一番モーターに近いところに寄せて、底面のビスをとりあえず固定し、ベッドをモーターから遠ざけた位置で奥のビスを固定しました。
+
+特に微調整していないですが、ひとまずこれでプリントしてみて、問題出たらスクリューナットの取り付け位置で調整してみたいと思います。
+
+### 目隠しバンパー取付
+
+M3x8mmビスを使用しました。
+
+![IMG_20221228_162606.jpg](IMG_20221228_162606.jpg)
+
+### ベッド取付
+
+先にケーブルチェーンからの配線をWAGOに接続して、結束バンドで配線をまとめました。
+
+![IMG_20221228_172239.jpg](IMG_20221228_172239.jpg)
+
+ベッドを乗せて
+
+![IMG_20221228_175831.jpg](IMG_20221228_175831.jpg)
+
+配線して完成！！！
+
+一連の作業の中で、このWAGOへの配線が一番イライラしたかも・・・
+
+配線を入れる穴が見えにくい！
+
+WAGOに頼った配線は考え直す必要がありますね。
+
+動画のように、温度センサーは別のコネクターにするかも？
+
+![IMG_20221228_175848.jpg](IMG_20221228_175848.jpg)
+
+## テスト＆調整
+
+### 配線チェック
+
+1. 温度センサーは正常に動作しているか？　→OK（ノズルとベッドでほぼ同じ温度を表示）
+2. ベッドの温度は上昇するか？　→　NG（WAGOの配線を奥まで刺した）　→　OK
+
+### ベッド高さ調整
+
+ZeroClickを使っているので、「SCREW_TILT_CALCULATE」で、３点の高さを合わせます。
+
+その後、プリントしてみたり紙を使ったレベル調整もしてみましたが、やはり手前側が0.1mm程度押されてしまうのは改善されていませんでした・・・
+
+次はプローブに使っているスイッチを低負荷で反応するものに変えてみたいと思います。

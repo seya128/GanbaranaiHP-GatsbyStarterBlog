@@ -43,9 +43,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-scroll": "^1.8.7",
-    "tailwindcss": "^3.1.8",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
     "prettier": "^2.5.1"
@@ -66,6 +64,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "optimizeImage": "node optimize.js"
   }
 }

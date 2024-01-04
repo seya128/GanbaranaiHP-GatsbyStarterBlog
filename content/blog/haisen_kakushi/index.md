@@ -26,7 +26,8 @@ tags: ["3Dプリント","DIY","LIFE"]
 <iframe title="抗菌ＰＰ収納マガジンラック" src="https://hatenablog-parts.com/embed?url=https://jp.daisonet.com/collections/living0205/products/4550480256153" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
 
 取っ手になる部分を切り取って、上からかぶせた時にケーブルが通るように加工しています。  
-なかなか固いフレームで、大きめのニッパーで、根気よく少しづつ削るようなイメージでカットしました。  
+なかなか固いフレームで、大きめのニッパーで、根気よく少しづつ削るようなイメージでカットしました。 
+ 
 ![](IMG_20231224_160845.jpg)
 
 ### ELPA スリム回転タップ
@@ -58,4 +59,8 @@ ONU、HDD、セットトップボックスも立てて、マガジンラック�
 
 
 ## 3DプリントパーツSTL
+![](block.png)
+
+以下リンクでSTLファイルをダウンロードできます。
+
 [block.stl](block.stl)

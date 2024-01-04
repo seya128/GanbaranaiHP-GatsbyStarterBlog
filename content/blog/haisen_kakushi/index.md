@@ -22,5 +22,14 @@ tags: ["3Dプリント","DIY","LIFE"]
 
 ## 使ったもの
 
-### ダイソー「抗菌ＰＰ収納マガジンラック」
+### ダイソー 抗菌ＰＰ収納マガジンラック
 <iframe title="抗菌ＰＰ収納マガジンラック" src="https://hatenablog-parts.com/embed?url=https://jp.daisonet.com/collections/living0205/products/4550480256153" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+
+取っ手になる部分を切り取って、上からかぶせた時にケーブルが通るように加工しています。  
+なかなか固いフレームで、大きめのニッパーで、根気よく少しづつ削るようなイメージでカットしました。  
+![](IMG_20231224_160845.jpg)
+
+### ELPA スリム回転タップ
+<iframe title="Amazon.co.jp: エルパ (ELPA) スリムタップ 雷ガード 延長コード 7個口 2ｍ 回転 耐雷 WBS-SL702SB(WD) : パソコン・周辺機器" src="https://amzn.to/48DHjZz" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>  
+(アフィリエイトリンクです)
+

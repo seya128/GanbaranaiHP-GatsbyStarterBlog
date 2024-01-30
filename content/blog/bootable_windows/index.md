@@ -1,5 +1,5 @@
 ---
-title: 外付けSSDにWindows11をインストール
+title: 外付けSSDにWindows11をインストールして持ち歩こう！
 date: "2024-01-30T18:00:00.000Z"
 description: "外付けSSDから起動するWindows11が簡単にできたよって話"
 image: "./b2bd08f47ee3cc6738f7844778050431.jpg"
@@ -14,12 +14,15 @@ tags: ["PC","Windows"]
 * 作業用WindowsPC
 * 外付けのSSD（USBメモリにもインストールできるけど遅すぎて実用的でない）
 * Windowsを外付デバイスにインストールするツール(Rufus)
+
 以上です。
 
 ## 外付SSD
 
 バッファローのUSBメモリぐらい小さいものを使いました。  
+
 ![](61hKHKFgOmL._AC_SL1000_.jpg)  
+
 [バッファロー SSD 外付け 250GB 極小 コンパクト ポータブル PS5 / PS4 対応 (メーカー動作確認済) USB3.2 Gen2 読込速度 600MB/s ブラック エコパッケージ SSD-PST250U3BA/N](https://amzn.to/42k5yu3)  
 (アフィリエイトリンクです)
 
@@ -39,7 +42,7 @@ tags: ["PC","Windows"]
 * **デバイス**  
     初期状態ではSSDは選択できません。   
     下の方の「USB接続のHDDを一覧表示」をチェックすることでSSDのドライブも選択できます。
-* **ブートの構成**   
+* **ブートの種類**   
     ここにインストールするWindowsのISOファイルを指定するのですが、右側の「選択」というところからダウンロードすることもできます。  
     ただし、うまく行かないこともあるので、その場合は後述する方法でISOファイルをダウンロードしてしてしてください。
 * **イメージオプション**  
@@ -57,7 +60,7 @@ tags: ["PC","Windows"]
 ## Windows11のISOイメージダウンロード
 RufusでWindowsのイメージをダウンロードしようとするとエラーになることがあります。  
 調べたところIPアドレスで弾かれたりすることがあるとかなんとか・・・  
-別の日に試したらダウンロードできたので、時間を開けてから試す方法もありますが、マイクロソフトツールを使ってダウンロードする方法もあります。
+別の日に試したらダウンロードできたので、時間を開けてから試す方法もありますが、マイクロソフトのツールを使ってダウンロードする方法もあります。
 
 <iframe title="Windows 11 をダウンロードする" src="https://hatenablog-parts.com/embed?url=https://www.microsoft.com/ja-jp/software-download/windows11" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
 

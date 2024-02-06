@@ -17,7 +17,7 @@ https://github.com/LucasOliveiraaa/Pychame
 以下、実際に動かしてみたわけではなく自分なりに調べて解釈した内容です。
 
 
-## Pychameを使ったカメラ画像を表示するサンプルプログラム
+## PyChameを使ったカメラ画像を表示するサンプルプログラム
 ``` python
     from pychame.video import Video
     import cv2

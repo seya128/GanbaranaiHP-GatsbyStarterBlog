@@ -3,7 +3,7 @@ title: ChromeOSのLinux環境からカメラ画像を使うライブラリ「Pyc
 date: "2024-02-06T23:50:00.000Z"
 description: "ChromeOSのLinux環境でカメラ画像にアクセスするライブライを見つけたので紹介します"
 blog: "Tech"
-tags: ["ChromeOS", "Python", "OpneCV"]
+tags: ["ChromeOS", "Python", "OpenCV"]
 image: "PyChame-flow.png"
 ---
 

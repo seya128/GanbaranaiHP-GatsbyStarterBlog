@@ -96,4 +96,4 @@ tags: ["3Dプリント","LIFE"]
 
 トイレットペーパーホルダ本体と、取り付けガイドのみです。
 
-[トイレットペーパーホルダー３ v10.3mf](./トイレットペーパーホルダー３%20v10.3mf)
+[toilet_paper_holder.3mf](toilet_paper_holder.3mf)

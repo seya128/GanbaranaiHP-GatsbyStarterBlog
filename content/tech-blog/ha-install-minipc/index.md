@@ -2,7 +2,7 @@
 title: HomeAssistantをミニPCにインストール
 date: "2025-05-28T18:00:00.000Z"
 description: "HomeAssistantをミニPCにインストール手順。USBでUbuntuを起動して内蔵SSDにインストールするやり方"
-image: ""
+image: "./home-assistant-hp.png"
 blog: "Tech"
 tags: ["HomeAssistant"]
 ---

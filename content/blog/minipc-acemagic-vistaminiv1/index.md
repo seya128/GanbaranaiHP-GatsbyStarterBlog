@@ -18,4 +18,12 @@ tags: ["Windows"]
 - SSD : 256GB
 - OS : Windows 11 Pro
 
+## 外箱
+
+## 内容物
+- ACアダプター
+- VESAブラケットとネジ
+- 本体
+- マニュアル
+
 

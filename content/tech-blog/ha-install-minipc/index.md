@@ -59,6 +59,25 @@ HomeAssistantをインストールPCでBIOS設定を変更します。
   https://jp.ubuntu.com/download  
   「Ubuntu Desktop 24.04.2 LTS」  
   を選択しました。  
-2. Raspberry Pi ImagerでUSBメモリーに書き込み
+2. Raspberry Pi ImagerでUSBメモリーに書き込み  
+  OSの選択で、「Use custom」を選んで、ダウンロードしたファイルを選択します。
+
+## USBメモリでUbuntu起動
+ここからは、HomeAssistant OSをインストールするPCで作業します。
+
+作成したUbuntu USBを、HomeAssistant OSをインストールするPCに接続して起動します。
+
+F12などを押してBootするデバイスを選択します。  
+(今回使ったミニPCはESCでBIOS画面でBootドライブを選択して起動できました）
+
+メニューで  
+「Try or Install Ubuntu」  
+を選択します。
+
+WiFi設定なしで「Ubuntuを試してみる」で起動します。
+
+起動後、画面右上辺りをクリックしてWiFi接続します。
+
+
 
 

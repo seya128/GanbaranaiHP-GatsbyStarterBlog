@@ -78,6 +78,34 @@ WiFi設定なしで「Ubuntuを試してみる」で起動します。
 
 起動後、画面右上辺りをクリックしてWiFi接続します。
 
+## HomeAssistant OSインストール
+
+USBから起動したUbuntuで、Firefoxブラウザを立ち上げ、以下ページを参考に進めていきます。
+
+https://www.home-assistant.io/installation/generic-x86-64
+
+「homeassistant install」などで検索すると出てきます。
+
+Firefoxブラウザでもページの翻訳ができるので日本語のほうが良ければ翻訳して進めます。  
+ブラウザ画面の右上の三本線のメニューから「Translate Page」で翻訳できます。
+
+Method 1(方法１)の５の手順からです。
+
+「download the image」のリンクをクリックするとイメージのダウンロードが始まります。  
+日本語翻訳だと「そこから、画像をダウンロードする」になっています。
+
+手順6:
+1. デスクトップ左下のUbuntuロゴのアイコンをクリックしてアプリ一覧を表示
+2. Utilitiesうぃクリックし、その中のDisksを起動
+
+手順7:
+1. インストールする起動デバイス(SSD)を選択
+2. ウィンドウ上部に出てきた、３点メニューから「Restore Disk Image」を選択
+3. ダウンロードしたイメージファイルを選択し、「Start Restoring..」をクリック
+4. 確認画面が出るので「Restore」
+5. 「Authenticate」
+6. 
+
 
 
 

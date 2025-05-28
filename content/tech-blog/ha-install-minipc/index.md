@@ -32,3 +32,33 @@ Amazonで19,900円で購入したPCを使います。
 
 <iframe title="２万円以下のミニPC「ACEMAGIC Vista Mini V1」を買ってみた | ガンバラナイ" src="https://hatenablog-parts.com/embed?url=https://ganbaranai.tech/blog/minipc-acemagic-vistaminiv1/" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
 
+# インストール
+
+<iframe title="汎用 x86-64 - ホームアシスタント" src="https://hatenablog-parts.com/embed?url=https://www.home-assistant.io/installation/generic-x86-64" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+
+↑の手順に従ってインストールします。
+
+## BIOS設定
+HomeAssistantをインストールPCでBIOS設定を変更します。
+
+1. UEFI ブート モードが有効になっていることを確認
+2. セキュアブートを無効
+
+の設定をします。
+
+セキュアブートを無効にしても、プリインストールされていたWindowsは普通に起動しました。
+
+
+## USBメモリで起動するUbuntu作成
+別のPCでの作業になります。
+
+<iframe title="Ubuntu 24.04のLive USBを使ってArduino IDEの検証 | Lang-ship" src="https://hatenablog-parts.com/embed?url=https://lang-ship.com/blog/work/ubuntu-24-04-live-usb/" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+↑を参考に、Raspberry Pi Imagerを使ってUSBメモリにUbuntuをインストールします。
+
+1. Ubuntuのディスクイメージをダウンロード  
+  https://jp.ubuntu.com/download  
+  「Ubuntu Desktop 24.04.2 LTS」  
+  を選択しました。  
+2. Raspberry Pi ImagerでUSBメモリーに書き込み
+
+

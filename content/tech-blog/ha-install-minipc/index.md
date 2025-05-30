@@ -9,12 +9,10 @@ tags: ["HomeAssistant"]
 
 # HomeAssistantとは
 
-ホーム アシスタントは、ホーム オートメーションに使用される無料のオープンソース ソフトウェアです。これは統合プラットフォームおよびスマート ホーム ハブとして機能し、ユーザーがスマート ホーム デバイスを制御できるようにします。
-
+ホーム アシスタントは、ホーム オートメーションに使用される無料のオープンソース ソフトウェアです。これは統合プラットフォームおよびスマート ホーム ハブとして機能し、ユーザーがスマート ホーム デバイスを制御できるようにします。  
 (Wikipediaより)
 
-複数メーカーのいろいろなスマートホーム製品や、自作の機器などを一括管理できるようです。
-
+複数メーカーのいろいろなスマートホーム製品や、自作の機器などを一括管理できたり、  
 自由にカスタムできるダッシュボードや、いろんな機器を組み合わせた自動化などもできるという優れものらしいです。
 
 <iframe title="Home Assistant" src="https://hatenablog-parts.com/embed?url=https://www.home-assistant.io/" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
@@ -50,7 +48,7 @@ HomeAssistantをインストールPCでBIOS設定を変更します。
 
 
 ## USBメモリで起動するUbuntu作成
-別のPCでの作業になります。
+HomeAssistant OSをインスーツするPCとは別のPCでの作業になります。
 
 <iframe title="Ubuntu 24.04のLive USBを使ってArduino IDEの検証 | Lang-ship" src="https://hatenablog-parts.com/embed?url=https://lang-ship.com/blog/work/ubuntu-24-04-live-usb/" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
 ↑を参考に、Raspberry Pi Imagerを使ってUSBメモリにUbuntuをインストールします。
@@ -96,7 +94,7 @@ Method 1(方法１)の５の手順からです。
 
 手順6:
 1. デスクトップ左下のUbuntuロゴのアイコンをクリックしてアプリ一覧を表示
-2. Utilitiesうぃクリックし、その中のDisksを起動
+2. Utilitiesをクリックし、その中のDisksを起動
 
 手順7:
 1. インストールする起動デバイス(SSD)を選択

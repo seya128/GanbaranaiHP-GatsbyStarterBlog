@@ -104,7 +104,22 @@ Method 1(方法１)の５の手順からです。
 3. ダウンロードしたイメージファイルを選択し、「Start Restoring..」をクリック
 4. 確認画面が出るので「Restore」
 5. 「Authenticate」
-6. 
+
+## 初回起動
+
+SSDへの書き込みが終了したら、Ubuntuを終了し、USBメモリを取り外し再起動。
+
+HomeAssistantが起動したら、別のPCで以下URLを開く。
+
+http://homeassistant.local:8123/
+
+「私のスマートホームを作成」ボタンをクリック
+
+ユーザー作成
+
+自宅の住所
+
+
 
 
 

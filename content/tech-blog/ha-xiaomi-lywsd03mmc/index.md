@@ -1,6 +1,6 @@
 ---
 title: 【HomeAssistant】温湿度計 Xiaomi LYWSD03MMC
-date: "2025-05-30T23:00:00.000Z"
+date: "2025-05-31T10:00:00.000Z"
 description: "HomeAssistantにXiaomiの温湿度計を追加。カスタームファーウェアに書き換えます。"
 image: "./image.png"
 blog: "Tech"

@@ -9,7 +9,8 @@ tags: ["HomeAssistant"]
 
 # Bluetoothの電波が弱い、届かない場所にも、デバイスを置きたい！
 
-Xiaomiの温湿度計をHomeAssistantに接続したのですが、電波が弱い場所があります。
+Xiaomiの温湿度計をHomeAssistantに接続したのですが、電波が弱い場所があります。  
+<iframe title="【HomeAssistant】温湿度計 Xiaomi LYWSD03MMC | ガンバラナイ" src="https://hatenablog-parts.com/embed?url=https://ganbaranai.tech/tech-blog/ha-xiaomi-lywsd03mmc/" style="width:100%;height:150px; max-width:600px; margin-left:auto; margin-right:auto;" frameborder="0" scrolling="no" loading="lazy"></iframe>
 
 このような場合は「Bluetoothプロキシ」を導入するのが良い！とGeminiさんが教えてくれました。
 

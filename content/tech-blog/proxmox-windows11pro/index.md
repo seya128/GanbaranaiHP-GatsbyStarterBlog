@@ -2,7 +2,7 @@
 title: 【Proxmox】Windows11Proをインストール
 date: "2025-06-08T18:00:00.000Z"
 description: "Proxmox上にWindows11Proをインストールしてみました"
-image: "./image.png"
+image: "./image-26.png"
 blog: "Tech"
 tags: ["Proxmox","Windows"]
 ---
@@ -159,4 +159,5 @@ VMを起動してWindowsをインストール
 ![](image-20.png)
 
 ![](image-21.png)
+
 

@@ -78,8 +78,6 @@ http://homeassistant.local:8123/config/backup/settings
         テキストエリアにペーストして、「SAVE」
         ![](image-8.png)
 
-
-
     - 認証が完了すると、通常は自動的にHome Assistantに戻り、設定が保存されます。  
         ![](image-9.png)
 
@@ -95,7 +93,7 @@ Google Drive Backupアドオンでは、世代別バックアップの設定が�
 - 毎日バックアップを実行を実行
 - 毎日のバックアップは２日分残す
 - 毎週月曜のバックアップは2週分残す
-- 毎月1日のバックアップは2週分残す
+- 毎月1日のバックアップは2月分残す
 - 毎年1/1のバックアップを1年分残す
 
 最大8個のバックアップを保存するので、「Backups in Google Drive」を8にする。  
